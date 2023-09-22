@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . 'Database.php';
+require_once 'config/database.php';
 
 $db = \Config\Database::getConnection();
 echo "Sukses membuat koneksi ke database";
