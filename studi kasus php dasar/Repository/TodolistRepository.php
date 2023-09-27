@@ -37,18 +37,32 @@ namespace Repository {
 
         function remove(int $number): bool
         {
-            if ($number > sizeof($this->todolist)) {
-                return false;
-            }
+//            if ($number > sizeof($this->todolist)) {
+//                return false;
+//            }
+//
+//           for ($i = $number; $i < sizeof($this->todolist); $i++) {
+//                $this->todolist[$i] = $this->todolist[$i + 1];
+//            }
+//
+//           unset($this->todolist[sizeof($this->todolist)]);
+//
+//            return true;
 
-            for ($i = $number; $i < sizeof($this->todolist); $i++) {
-                $this->todolist[$i] = $this->todolist[$i + 1];
-            }
+            $sql = "SELECT id FROM todolist WHERE id = ?";
+            $statement = $this->connection->prepare($sql);
+            $statement->execute([number]); 
 
-            unset($this->todolist[sizeof($this->todolist)]);
-
+            if($statement->fetch()){
+                //todolist ada
+            $sql = "DELETE FROM todolist WHERE id = ?";
+            $statement = $this->connection->prepare($sql);
+            $statement->execute([$number]);
             return true;
-        }
+            }else {
+            //todolist tidak ada
+            return false;
+            }
 
         function findAll(): array
         {
@@ -56,4 +70,5 @@ namespace Repository {
         }
     }
 
+}
 }
