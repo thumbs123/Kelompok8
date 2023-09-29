@@ -23,7 +23,7 @@ function testShowTodolist(): void
 function testAddTodolist(): void
 {
     $connection = \Config\database::getConnection();
-    $todolistRepository = new TodolistRepositoryImpl();
+    $todolistRepository = new TodolistRepositoryImpl($connection);
 
     $todolistService = new TodolistServiceImpl($todolistRepository);
     $todolistService->addTodolist("Belajar PHP");
@@ -47,6 +47,6 @@ function testRemoveTodolist(): void
     echo $todolistService->removeTodolist(1) . PHP_EOL;
 }
 
-testAddTodolist();
+testRemoveTodolist();
  
 

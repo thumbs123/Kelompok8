@@ -15,7 +15,8 @@ namespace Repository {
 
     }
 
-    class TodolistRepositoryImpl implements TodolistRepository {
+    class TodolistRepositoryImpl implements TodolistRepository
+    {
 
         public array $todolist = array();
 
@@ -33,7 +34,7 @@ namespace Repository {
 
             $sql = "INSERT INTO todolist(todo) VALUES (?)";
             $statement = $this->connection->prepare($sql);
-            $statement->excecute([$todolist->getTodo()]);
+            $statement->execute([$todolist->getTodo()]);
         }
 
         function remove(int $number): bool
@@ -52,7 +53,7 @@ namespace Repository {
 
             $sql = "SELECT id FROM todolist WHERE id = ?";
             $statement = $this->connection->prepare($sql);
-            $statement->execute([number]); 
+            $statement->execute([$number]); 
 
             if($statement->fetch()){
                 //todolist ada
@@ -64,6 +65,7 @@ namespace Repository {
             //todolist tidak ada
             return false;
             }
+        }
 
             function findAll(): array
             {
@@ -81,10 +83,9 @@ namespace Repository {
     
                     $result[] = $todolist;
                 }
-    
                 return $result;
             }
     }
 
 }
-}
+

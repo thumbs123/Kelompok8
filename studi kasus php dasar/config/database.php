@@ -7,11 +7,11 @@ namespace Config {
         {
             $host = "localhost";
             $port = "3306" ;
-            $database ="belajar_php_todolist";
+            $database ="db_todolist";
             $username="root";
             $password ="";
         
-            return new \PDO("mysql:host=$host:$port;dbname=$database",username,password);
+            return new \PDO("mysql:host=$host:$port;dbname=$database",$username,$password);
         }
 
     }
