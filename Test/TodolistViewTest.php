@@ -6,10 +6,9 @@ require_once __DIR__ . '/../Service/TodolistService.php';
 require_once __DIR__ . '/../View/TodolistView.php';
 require_once __DIR__ . '/../Helper/InputHelper.php';
 
-use \Entity\Todolist;
-use \Repository\TodolistRepositoryImpl;
-use \Service\TodolistServiceImpl;
-use \View\TodolistView;
+use Repository\TodolistRepositoryImpl;
+use Service\TodolistServiceImpl;
+use View\TodolistView;
 
 function testViewShowTodolist(): void
 {

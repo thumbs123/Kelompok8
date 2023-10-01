@@ -2,8 +2,8 @@
 
 namespace View {
 
-    use Service\TodolistService;
     use Helper\InputHelper;
+    use Service\TodolistService;
 
     class TodolistView
     {
