@@ -39,13 +39,13 @@ function testRemoveTodolist(): void
 
     $todolistService = new TodolistServiceImpl($todolistRepository);
    
-    echo $todolistService->removeTodolist(5) . PHP_EOL;
+    echo $todolistService->removeTodolist(0) . PHP_EOL;
     echo $todolistService->removeTodolist(4) . PHP_EOL;
     echo $todolistService->removeTodolist(3) . PHP_EOL;
     echo $todolistService->removeTodolist(2) . PHP_EOL;
     echo $todolistService->removeTodolist(1) . PHP_EOL;
 }
 
-testRemoveTodolist();
- 
+//testRemoveTodolist();
+testAddTodolist();
 
